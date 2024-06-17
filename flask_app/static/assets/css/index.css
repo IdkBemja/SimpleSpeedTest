@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital@0;1&display=swap');
+
+html, body {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    background-color: #141526;
+}
+
+* {
+    color: white;
+}
+
+.top-header{
+    padding: 10px 260px;
+    width: 100%;
+    height: 7%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #141526;
+}
+
+.top-header img {
+    width: 220px;
+    height: 50px;
+    object-fit: contain;
+    cursor: pointer;
+}
+.top-header li, ul, li a{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    text-decoration: none;
+    color: white;
+    gap: 30px;
+    font-size: 20px;
+}
+
+.top-header ul li:hover, li a:hover{
+    color: #fea901;
+    cursor: pointer;
+}
+
+.main-container {
+    width: 100%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    background-color: #141526;
+
+}
+
+.start-panel, .waiting-panel, .error-panel {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    min-width: 400px;
+    align-items: center;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 cyan;
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(0, 255, 255, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(0, 255, 255, 0);
+    }
+}
+
+@keyframes pulsewaiting {
+    0% {
+        box-shadow: 0 0 0 0 white;
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(0, 255, 255, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(0, 255, 255, 0);
+    }
+}
+
+@keyframes pulseerror {
+    0% {
+        box-shadow: 0 0 0 0 red;
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(0, 255, 255, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(0, 255, 255, 0);
+    }
+}
+
+#start-speedtest-button {
+    background-color: transparent;
+    border: 2px solid cyan;
+    border-radius: 100%;
+    padding: 60px;
+    font-size: 30px;
+    animation: pulse 2s infinite;
+}
+
+#start-speedtest-button2 {
+    background-color: transparent;
+    border: 2px solid cyan;
+    border-radius: 100%;
+    padding: 30px;
+    font-size: 15px;
+    animation: pulse 2s infinite;
+}
+
+#start-speedtest-button3 {
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 100%;
+    padding: 30px;
+    font-size: 15px;
+    cursor: progress;
+    animation: pulsewaiting 1s infinite;
+}
+
+#start-speedtest-button4 {
+    background-color: transparent;
+    border: 2px solid red;
+    border-radius: 100%;
+    padding: 30px;
+    font-size: 15px;
+    cursor: not-allowed;
+    animation: pulseerror 1s infinite;
+}
+
+#start-speedtest-button:hover {
+    background-color: rgba(0, 255, 255, 0.1);
+    border: 2px solid cyan;
+    border-radius: 100%;
+    padding: 60px;
+    font-size: 30px;
+    animation: pulse 2s infinite;
+}
+
+.info-div {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+}
+
+.right-side {
+    text-align: right;
+}
+
+
+.results-panel {
+    display: flex;
+    flex-direction: column;
+    background-color: #26273b;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.top-results {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-self: center;
+}
+
+.u-top, .d-top {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.result-type {
+    color: gray;
+
+}
+
+.upload p, .download p {
+    font-size: 30px;
+    text-align: center;
+}
+
+.resume-results, .resume-results ul{
+    display: flex;
+    flex-direction: row;
+}
+
+.download_icon {
+    color: cyan;
+}
+
+.upload_icon {
+    color: gold;
+}
+
+.info-results {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.server_info, .server_info ul, .user_info, .user_info ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.start-again {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.color-gray {
+    color: gray;
+}
