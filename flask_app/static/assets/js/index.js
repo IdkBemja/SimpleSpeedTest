@@ -1,8 +1,16 @@
 $(document).ready(function(){
-    start_page()
-    start_speedtest()
-    start_speedtest_again()
-    home_button()
+
+    fetch('https://api.ipify.org?format=json')
+        .then(response => response.json())
+        .then(data => {
+            window.userPublicIp = data.ip;
+            start_page();
+            start_speedtest();
+            start_speedtest_again();
+            home_button();
+        })
+        .catch(error => console.error('Error fetching user\'s IP:', error));
+
 });
 
 function home_button(){
@@ -26,6 +34,7 @@ function start_speedtest(){
         $.ajax({
             url: '/start-speedtest',
             type: 'GET',
+            data: {userIp: window.userPublicIp},
             success: function(data){
                 console.log(data);
                 $(".waiting-panel").hide();

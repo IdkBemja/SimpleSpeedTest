@@ -21,13 +21,11 @@ def get_client_info():
     return public_ip, isp
 
 # Start the speedtest 
-def start_speed():
+def start_speed(user_public_ip):
     st = speedtest.Speedtest()
     server = st.get_best_server()
     server_name = server['name']
     server_isp = server['sponsor']
-    client_info = st.results.client
-    user_public_ip = client_info['ip']
     user_isp = st.results.client['isp']
     down_speed = st.download()
     up_speed  = st.upload()

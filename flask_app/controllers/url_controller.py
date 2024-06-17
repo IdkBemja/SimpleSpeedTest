@@ -17,7 +17,8 @@ def index():
 
 @app.route("/start-speedtest", methods=['GET'])
 def start_speedtest():
-    results = perform_speedtest.start_speed()
+    user_ip = request.args.get('userIP')
+    results = perform_speedtest.start_speed(user_ip)
     return jsonify(results)
 
 @app.route("/convert-mbps-to-MBps", methods=['POST'])
